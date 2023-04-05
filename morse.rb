@@ -15,4 +15,15 @@ def decode_char(char)
   morse[char]
 end
 
+# Create a method to decode an entire word in Morse code, takes a string parameter, and return the string representation.
+# Every character in a word will be separated by a single space (e.g. decode_word("-- -.--") returns "MY").
+
+def decode_word(word)
+  w = word.split
+  new_word = ''
+  w.each {|char| new_word += decode_char(char)}
+  new_word
+end
+
 puts decode_char(".-") # Should return 'A'
+puts decode_word("-- -.--") # Should return 'MY
